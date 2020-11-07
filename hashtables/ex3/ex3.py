@@ -2,7 +2,30 @@ def intersection(arrays):
     """
     YOUR CODE HERE
     """
-    # Your code here
+    # create a dictionary
+    d = dict()
+    # find how many arrays we have
+    count = len(arrays)
+
+    # loop through the list of arrays
+    for array in arrays:
+        # loop through each array
+        for value in array:
+            # if the value is not in the dictionary
+            if value not in d:
+                d[value] = 1
+            # if the value is in the dictionary
+            else:
+                d[value] += 1
+
+    # create an empty list to hold the result
+    result = []
+    # search the dictionary for the intersecting values
+    for number, occurences in d.items():
+        # if there is a number that intersects all the given arrays
+        if occurences == count:
+            # add it to our result
+            result.append(number)
 
     return result
 
